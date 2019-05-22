@@ -12,11 +12,11 @@ public class DemoEventConsumer {
     //Register as a receiver for an event, get all events using the DemoEvent object
     @EventListener
     public void waitForEvent(DemoEvent demoEvent) {
-        LOGGER.info("Got the event {}", demoEvent.getValue());
+        LOGGER.error("Got the event {}", demoEvent.getValue());
     }
 
     @EventListener
     public void waitForStringEvent(String demoStringEvent) {
-        LOGGER.info("Got the string event {}", demoStringEvent);
+        LOGGER.error("Got the string event {}", demoStringEvent);
     }
 }

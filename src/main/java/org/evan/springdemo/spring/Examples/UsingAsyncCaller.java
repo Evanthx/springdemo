@@ -30,20 +30,20 @@ public class UsingAsyncCaller implements Runnable {
         try {
             TimeUnit.SECONDS.sleep(2);
 
-            LOGGER.info("About to call async method.");
+            LOGGER.error("About to call async method.");
             usingAsync.runSlowly();
-            LOGGER.info("Finished calling async method.");
+            LOGGER.error("Finished calling async method.");
 
-            LOGGER.info("About to call async method with return value.");
+            LOGGER.error("About to call async method with return value.");
             Future<String> future = usingAsync.runSlowlyWithReturnValue();
             while (true) {
                 if (future.isDone()) {
-                    LOGGER.info("Value from async method - {}", future.get());
+                    LOGGER.error("Value from async method - {}", future.get());
                     break;
                 }
                 TimeUnit.MILLISECONDS.sleep(100);
             }
-            LOGGER.info("Finished calling async method with return value.");
+            LOGGER.error("Finished calling async method with return value.");
 
         } catch (Exception e) {
         }

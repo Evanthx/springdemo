@@ -6,7 +6,6 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
@@ -28,7 +27,7 @@ public class UsingAsync {
             TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
         }
-        LOGGER.info("Async method without return value is finished.");
+        LOGGER.error("Async method without return value is finished.");
     }
 
     @Async
@@ -37,7 +36,7 @@ public class UsingAsync {
             TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
         }
-        LOGGER.info("Async method with return value is finished.");
+        LOGGER.error("Async method with return value is finished.");
         return new AsyncResult<String>("Done");
     }
 

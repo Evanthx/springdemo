@@ -24,7 +24,7 @@ public class DemoScheduling {
      */
     @Scheduled(fixedDelay = 2000, initialDelay=5000)
     public void ScheduledMethod() {
-        LOGGER.info("Running fixedDelay job {}", delayCount++);
+        LOGGER.error("Running fixedDelay job {}", delayCount++);
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
@@ -41,7 +41,7 @@ public class DemoScheduling {
      */
     @Scheduled(fixedRate = 2000, initialDelay=5000)
     public void ScheduledFixedRateMethod() {
-        LOGGER.info("Running fixedRate job {}", rateCount++);
+        LOGGER.error("Running fixedRate job {}", rateCount++);
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
